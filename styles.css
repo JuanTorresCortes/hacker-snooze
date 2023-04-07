@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+
+#main-container{
+    border: 1px solid rgb(255, 140, 0);
+}
+
+.div{
+    border: 1px solid rgb(230, 140, 0);
+    background-color: rgb(255, 140, 0);
+    opacity: 0.5;
+}
+
+
+
+#sp-1{
+    display: flex;
+    flex-direction: row;
+}
+
+.border-r{
+    border-right: 1px solid white;
+}
+.nav-w-size{
+    color: white;
+    font-size: 12px;
+    border-right: 2px solid white;
+}
+
+.nav-w{
+    color: white;
+}

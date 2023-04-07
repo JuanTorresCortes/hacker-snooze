@@ -1,5 +1,3 @@
-
-
 let container = document.querySelector("#main-container");
   container.style.marginTop = "1em";
   container.style.padding = "1em";
@@ -11,7 +9,7 @@ let header = document.querySelector("#header");
  let ol = document.createElement("ol");
  
 
-async function render(data) {
+async function render100(data) {
   
   for (const [key, value] of Object.entries(data)) {
     let key = [];
@@ -63,17 +61,17 @@ async function render(data) {
 
 }
 
-async function getTopStories() {
+async function getNewStories(){
   
-  let url = " https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
-  let firs100 = []
-  let res = await fetch(url);
+  let res = await fetch("https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty");
   let data = await res.json();
 
+  let first100 = [];
+
   for(let i = 0; i < 100; i++){
-    firs100.push(data[i])
+  first100.push(data[i])
   }
-  header.innerText = "Top 100 stories";
-  render(firs100);
+  header.innerText = "New stories";
+  render100(first100);
 }
-getTopStories()
+getNewStories();

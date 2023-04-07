@@ -1,5 +1,3 @@
-
-
 let container = document.querySelector("#main-container");
   container.style.marginTop = "1em";
   container.style.padding = "1em";
@@ -63,17 +61,12 @@ async function render(data) {
 
 }
 
-async function getTopStories() {
-  
-  let url = " https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty";
-  let firs100 = []
-  let res = await fetch(url);
-  let data = await res.json();
+async function getAsk() {
 
-  for(let i = 0; i < 100; i++){
-    firs100.push(data[i])
-  }
-  header.innerText = "Top 100 stories";
-  render(firs100);
+  let res = await fetch("https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty");
+  let data = await res.json();
+  
+  header.innerText = "Ask"; 
+  render(data);
 }
-getTopStories()
+getAsk();
